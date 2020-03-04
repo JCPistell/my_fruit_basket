@@ -2,14 +2,14 @@ connection: "internal"
 include: "//looker_fruit_basket/*.explore.lkml"
 
 test: check_fruit {
-  explore_source: performance {
+  explore_source: fruit_ext {
     column: name {
       field: fruit.name
     }
     limit: 1
   }
   assert: the_first_fruit_is_an_orange {
-    expression: ${fruit.name} = "apple" ;;
+    expression: ${fruit.name} = "orange" ;;
   }
 }
 
